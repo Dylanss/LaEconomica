@@ -6,7 +6,19 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Create category</h4>
-                    {!!Form::open(['action' => 'AdminController@addcategory', 'class' => 'cmxform', 'method' => 'POST', 'id' => 'commentForm'])!!}
+                        @if (Session::has('status'))
+                            <div class="alert alert-success">
+                                {{Session::get('status')}}    
+                            </div>
+                        @endif   
+                        
+                        @if (Session::has('status1'))
+                             <div class="alert alert-danger">
+                            {{Session::get('status1')}}   
+                             </div>
+                        @endif
+
+                    {!!Form::open(['action' => 'CategoryController@savecategory', 'class' => 'cmxform', 'method' => 'POST', 'id' => 'commentForm'])!!}
                         {{csrf_field()}}
                             <div class="form-group">
                                 {{Form::label('', 'Product Category', ['for' => 'cname'])}}
@@ -21,6 +33,6 @@
 @endsection
 
 @section('scripts')
-    <script src="backend/js/bt-maxLength.js"></script>
+    <script src="{{asset('backend/js/bt-maxLength.js')}}"></script>
 @endsection
 
