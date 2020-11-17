@@ -13,11 +13,13 @@ class CategoryController extends Controller
 
     public function categories(Request $request){
         $categories = Category :: get();
-         return view('admin.categories')->with('categories',$categories);
+        return view('admin.categories')->with('categories',$categories);
     }
 
     public function savecategory(Request $request){
-        $checkcat = Category :: where('category_name', $request -> input('category_name'))->first();
+
+        $this->validate($request, ['category_name' => 'required']);
+        $checkcat = Category::where('category_name', $request -> input('category_name'))->first();
 
         $category = new Category();
         
