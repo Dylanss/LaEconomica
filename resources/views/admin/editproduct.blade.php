@@ -1,7 +1,7 @@
 @extends('layouts.appadmin')
 
 @section('title')
-    Add product
+    Editar producto
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Create product</h4>
+                    <h4 class="card-title">Editar producto</h4>
 
                 @if (Session::has('status'))
                     <div class="alert alert-success">
@@ -36,15 +36,14 @@
                             </div>
                             <div class="form-group">
                                 {{Form::label('', 'Product Category', ['for' => 'cname'])}}
-                                {{Form::select('product_category',$categories, null, ['placeholder' => 'Select category', 'class' => 'form-control'])}}
+                                {{Form::select('product_category', '$categories' , null, ['placeholder' => 'Select category', 'class' => 'form-control'])}}
                             </div>
                             <div class="form-group">
                                 {{Form::label('', 'Product Image', ['for' => 'cname'])}}
                                 {{Form::file('product_image', ['class' => 'form-control'])}}
                             </div>
                        
-
-                            {{Form::submit('Save', ['class' => 'btn btn-primary'])}}
+                            {{Form::submit('Update', ['class' => 'btn btn-primary'])}}
                     {!!Form::close()!!}
                 </div>
             </div>

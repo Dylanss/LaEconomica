@@ -32,7 +32,7 @@
                             <td>{{$category ->category_name}}</td>
                             <td>
                               <button class="btn btn-outline-primary" 
-                              onclick="window.location='{{url('/edit/'.$category->id)}}'">Editar</button>
+                              onclick="window.location='{{url('/edit_category/'.$category->id)}}'">Editar</button>
 
                             <a href="/delete/{{$category->id}}" class="btn btn-outline-danger" id="delete">Eliminar</a>
                             </td>

@@ -4,62 +4,71 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
 
 class ProductController extends Controller
 {
     //
     public function addproduct(){
-        return view('admin.addproduct');
+        $categories = Category::All()->pluck('category_name', 'category_name');
+        return view('admin.addproduct')->with('categories', $categories);
     }
 
     public function saveproduct(Request $request){
+
         $this->validate($request, ['product_name' => 'required',
                                    'product_price'=> 'required',
-                                   'product_image'=> 'image|nullable|max:1999',
-                                   'product_status'=> 'required']);
+                                   'product_image'=> 'image|nullable|max:1999']);
 
-      /*       
-        if($request->hash_file('product_image')){
-            //1: get filename with ext
-            $fileNameWithExt = $request->file('product_image')->getClienteOriginalName();
+        if($request->input('product_category')){
 
-            //2: get just file name
-            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-
-            //3: get just extension
-            $extension = $request->file('product_image')->getClienteOriginalExtension();
-
-            //4: file name to store
-            $fileNameToStore = $fileName.'_'.time().'.'.$extension;
-
-            //upload image
-            $path = $request->file('product_image')->storeAs('public/product_images',
-            $fileNameToStore);
-        }   
-        else{$fileNameToStore = 'noimage.jpg';
-
-        }  
-        
-        $product = new Product();
-
-        $product->product_name = $request->input('product_name');
-        $product->product_price = $request->input('product_price');
-        $product->product_category = $request->input('product_category');
-        $product->product_image = $request->input('product_image');
-        if($request->input('product_status')){
-           $product->status = 1;
+                    if($request->hasFile('product_image')){
+                        //1: get filename with ext
+                        $fileNameWithExt = $request->file('product_image')->getClientOriginalName();
+            
+                        //2: get just file name
+                        $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            
+                        //3: get just extension
+                        $extension = $request->file('product_image')->getClientOriginalExtension();
+            
+                        //4: file name to store
+                        $fileNameToStore = $fileName.'_'.time().'.'.$extension;
+            
+                        //upload image
+                        $path = $request->file('product_image')->storeAs('public/product_images',
+                        $fileNameToStore);
+                    }   
+                    else{$fileNameToStore = 'noimage.jpg';
+            
+                    }  
+                    
+                    $product = new Product();
+            
+                    $product->product_name = $request->input('product_name');
+                    $product->product_price = $request->input('product_price');
+                    $product->product_category = $request->input('product_category');
+                    $product->product_image = $fileNameToStore;
+                    $product->status = 1;
+            
+                    $product->save();
+            
+                    return redirect('/addproduct')->with('status','The'.$product->product_name.'Product has been saved successfully');
         }else{
-           $product->status = 0;
+                     return redirect('/addproduct')->with('status1','Por favor seleccione una categoria');
         }
-
-        $product->save();
-
-        return redirect('/addproduct')->with('status','The'.$product->product_name.'Product has been saved successfully');*/
-
+        
     }
 
     public function products(){
-        return view('admin.products');
+        $products = Product::get();
+        return view('admin.products')->with('products', $products);
+    }
+
+    public function editproduct($id){
+        $product = Product::where('id', $id)->get();
+
+        return view('admin.editproduct')->with('product', $product);
     }
 
 
