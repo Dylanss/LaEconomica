@@ -17,6 +17,15 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
+//Template Cliente
+//home client
+Route::get('/', 'ClientController@home');
+
+Route::get('/shop', 'ClientController@shop');
+Route::get('/cart', 'ClientController@cart');
+Route::get('/checkout', 'ClientController@checkout');
+Route::get('/login', 'ClientController@login');
+Route::get('/signup', 'ClientController@signup');
 
 //Template Admin
 Route::get('/admin', 'AdminController@dashboard');
