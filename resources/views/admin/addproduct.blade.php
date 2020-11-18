@@ -1,7 +1,7 @@
 @extends('layouts.appadmin')
 
 @section('title')
-    Add product
+    Agregar Producto
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Create product</h4>
+                    <h4 class="card-title">Crear Producto</h4>
 
                 @if (Session::has('status'))
                     <div class="alert alert-success">
@@ -27,24 +27,24 @@
                     'cmxform', 'method' => 'POST', 'id' => 'commentForm' , 'enctype' => 'multipart/form-data'])!!}
                         {{csrf_field()}}
                             <div class="form-group">
-                                {{Form::label('', 'Product Name', ['for' => 'cname'])}}
+                                {{Form::label('', 'Nombre del Producto', ['for' => 'cname'])}}
                                 {{Form::text('product_name', '', ['class' => 'form-control', 'minlength' => '2'])}}
                             </div>
                             <div class="form-group">
-                                {{Form::label('', 'Product Price', ['for' => 'cname'])}}
+                                {{Form::label('', 'Precio del Producto', ['for' => 'cname'])}}
                                 {{Form::number('product_price', '', ['class' => 'form-control'])}}
                             </div>
                             <div class="form-group">
-                                {{Form::label('', 'Product Category', ['for' => 'cname'])}}
-                                {{Form::select('product_category',$categories, null, ['placeholder' => 'Select category', 'class' => 'form-control'])}}
+                                {{Form::label('', 'Categoria del Producto', ['for' => 'cname'])}}
+                                {{Form::select('product_category',$categories, null, ['placeholder' => 'Seleccionar Categoria', 'class' => 'form-control'])}}
                             </div>
                             <div class="form-group">
-                                {{Form::label('', 'Product Image', ['for' => 'cname'])}}
+                                {{Form::label('', 'Imagen del Producto', ['for' => 'cname'])}}
                                 {{Form::file('product_image', ['class' => 'form-control'])}}
                             </div>
                        
 
-                            {{Form::submit('Save', ['class' => 'btn btn-primary'])}}
+                            {{Form::submit('Guardar', ['class' => 'btn btn-primary'])}}
                     {!!Form::close()!!}
                 </div>
             </div>

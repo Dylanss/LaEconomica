@@ -43,7 +43,10 @@ Route::get('/addproduct', 'ProductController@addproduct');
 Route::get('/products', 'ProductController@products');
 Route::post('/saveproduct','ProductController@saveproduct');
 Route::get('/edit_product/{id}', 'ProductController@editproduct');
-
+Route::post('/updateproduct', 'ProductController@updateproduct');
+Route::get('/delete_product/{id}', 'ProductController@delete_product');
+Route::get('/activate_product/{id}', 'ProductController@activate_product');
+Route::get('/unactivate_product/{id}', 'ProductController@unactivate_product');
 Route::get('/addslider', 'SliderController@addslider');
 
 //Listar-Template Admin

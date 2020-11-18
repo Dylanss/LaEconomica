@@ -1,7 +1,7 @@
 @extends('layouts.appadmin')
 
 @section('title')
-    Add slider
+    Agregar Panel
 @endsection
 
 @section('content')
@@ -9,26 +9,26 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Create slider</h4>
+                    <h4 class="card-title">Crear Panel</h4>
                     {!!Form::open(['action' => 'SliderController@addslider', 'class' => 'cmxform', 'method' => 'POST', 'id' => 'commentForm'])!!}
                         {{csrf_field()}}
                             <div class="form-group">
-                                {{Form::label('', 'Description one', ['for' => 'cname'])}}
+                                {{Form::label('', 'Descripcion 1', ['for' => 'cname'])}}
                                 {{Form::text('description_one', '', ['class' => 'form-control', 'minlength' => '2'])}}
                             </div>
                             <div class="form-group">
-                                {{Form::label('', 'Description two', ['for' => 'cname'])}}
+                                {{Form::label('', 'Descripcion 2', ['for' => 'cname'])}}
                                 {{Form::number('description_two', '', ['class' => 'form-control', 'minlength' => '2'])}}
                             </div>
                             <div class="form-group">
-                                {{Form::label('', 'Slider Image', ['for' => 'cname'])}}
+                                {{Form::label('', 'Imagen del panel', ['for' => 'cname'])}}
                                 {{Form::file('slider_image', ['class' => 'form-control'])}}
                             </div>
                             <div class="form-group">
-                                {{Form::label('', 'Slider Status', ['for' => 'cname'])}}
+                                {{Form::label('', 'Status del Panel', ['for' => 'cname'])}}
                                 {{Form::checkbox('silder_status', '','true',['class' => 'form-control'])}}
                             </div>
-                            {{Form::submit('Save', ['class' => 'btn btn-primary'])}}
+                            {{Form::submit('Guardar', ['class' => 'btn btn-primary'])}}
                     {!!Form::close()!!}
                 </div>
             </div>

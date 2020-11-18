@@ -23,20 +23,21 @@
                      </div>
                 @endif
 
-                    {!!Form::open(['action' => 'ProductController@saveproduct', 'class' => 
+                    {!!Form::open(['action' => 'ProductController@updateproduct', 'class' => 
                     'cmxform', 'method' => 'POST', 'id' => 'commentForm' , 'enctype' => 'multipart/form-data'])!!}
                         {{csrf_field()}}
                             <div class="form-group">
+                                {{Form::hidden('id', $product->id)}}
                                 {{Form::label('', 'Product Name', ['for' => 'cname'])}}
-                                {{Form::text('product_name', '', ['class' => 'form-control', 'minlength' => '2'])}}
+                                {{Form::text('product_name', $product->product_name, ['class' => 'form-control', 'minlength' => '2'])}}
                             </div>
                             <div class="form-group">
                                 {{Form::label('', 'Product Price', ['for' => 'cname'])}}
-                                {{Form::number('product_price', '', ['class' => 'form-control'])}}
+                                {{Form::number('product_price', $product->product_price, ['class' => 'form-control'])}}
                             </div>
                             <div class="form-group">
                                 {{Form::label('', 'Product Category', ['for' => 'cname'])}}
-                                {{Form::select('product_category', '$categories' , null, ['placeholder' => 'Select category', 'class' => 'form-control'])}}
+                                {{Form::select('product_category', $categories , $product->product_category,['class' => 'form-control'])}}
                             </div>
                             <div class="form-group">
                                 {{Form::label('', 'Product Image', ['for' => 'cname'])}}
