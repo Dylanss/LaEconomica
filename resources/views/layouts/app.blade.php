@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Liquor Store - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Diegizy</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -19,6 +19,18 @@
     
     <link rel="stylesheet" href="frontend/css/flaticon.css">
     <link rel="stylesheet" href="frontend/css/style.css">
+
+    <!--Slider-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="slider/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="slider/css/aos.css">
+    <link rel="stylesheet" href="slider/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="slider/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="slider/css/icomoon.css">
+
   </head>
   <body>
 
@@ -128,6 +140,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="frontend/js/google-map.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 <script src="frontend/js/main.js"></script>
+
+<!-- Slider -->
+<!-- loader -->
+
+<script src="slider/js/aos.js"></script>
+<script src="slider/js/bootstrap-datepicker.js"></script>
+<script src="slider/js/main.js"></script>
+<!-- Slider -->
+
 
 </body>
 </html>

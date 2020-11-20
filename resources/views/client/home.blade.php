@@ -6,19 +6,53 @@
 
 @section('content')
     
-	     <div class="hero-wrap" style="background-image: url('frontend/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-8 ftco-animate d-flex align-items-end">
-          	<div class="text w-100 text-center">
-	            <h1 class="mb-4">Good <span>Drink</span> for Good <span>Moments</span>.</h1>
-	            <p><a href="#" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="#" class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+	<section id="home-section" class="hero">
+		  <div class="home-slider owl-carousel">
+	      <div class="hero-wrap" style="background-image: url('frontend/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+	            <div class="col-md-12 ftco-animate text-center">
+	              <h1 class="mb-2">We serve Fresh Vegestables &amp; Fruits</h1>
+	              <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
+	              <p><a href="#" class="btn btn-primary">View Details</a></p>
+	            </div>
+
+	          </div>
+	        </div>
+	      </div>
+
+	      <div class="hero-wrap" style="background-image: url('frontend/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+	            <div class="col-sm-12 ftco-animate text-center">
+	              <h1 class="mb-2">100% Fresh &amp; Organic Foods</h1>
+	              <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
+	              <p><a href="#" class="btn btn-primary">View Details</a></p>
+	            </div>
+
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+    </section>
+ <!-- <div class="hero-wrap" style="background-image: url('frontend/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text align-items-center justify-content-center">
+			<div class="col-md-8 ftco-animate d-flex align-items-end">
+				<div class="text w-100 text-center">
+					<h1 class="mb-4"><span>¿Aburrido de tomar lo mismo? !Ya no más¡</span>.</h1>
+					<h2 class="" style="-webkit-text-fill-color: #b5b72a;">!Nuevos Productos ¡</h2>
+					<p><a href="#" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="#" class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
+				</div>
+			</div>
+			</div>
+		</div>
+		</div>  -->
 
     <section class="ftco-intro">
     	<div class="container">

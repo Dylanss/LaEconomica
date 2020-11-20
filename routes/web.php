@@ -27,10 +27,12 @@ Route::get('/checkout', 'ClientController@checkout');
 Route::get('/login', 'ClientController@login');
 Route::get('/signup', 'ClientController@signup');
 
+
 //Template Admin
 Route::get('/admin', 'AdminController@dashboard');
+Route::get('/orders', 'AdminController@orders');
 
-//Agregar-Template Admin
+
 Route::get('/addcategory', 'CategoryController@addcategory');
 Route::post('/savecategory', 'CategoryController@savecategory');
 Route::get('/categories', 'CategoryController@categories');
@@ -49,8 +51,6 @@ Route::get('/activate_product/{id}', 'ProductController@activate_product');
 Route::get('/unactivate_product/{id}', 'ProductController@unactivate_product');
 Route::get('/addslider', 'SliderController@addslider');
 
-//Listar-Template Admin
-Route::get('/products', 'ProductController@products');
-//Route::get('/categories', 'AdminController@categories');
+
 Route::get('/sliders', 'SliderController@sliders');
-Route::get('/orders', 'AdminController@orders');
+Route::post('/savesslider', 'SliderController@saveslider');
