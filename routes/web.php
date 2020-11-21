@@ -49,8 +49,14 @@ Route::post('/updateproduct', 'ProductController@updateproduct');
 Route::get('/delete_product/{id}', 'ProductController@delete_product');
 Route::get('/activate_product/{id}', 'ProductController@activate_product');
 Route::get('/unactivate_product/{id}', 'ProductController@unactivate_product');
-Route::get('/addslider', 'SliderController@addslider');
 
 
 Route::get('/sliders', 'SliderController@sliders');
+Route::get('/addslider', 'SliderController@addslider');
 Route::post('/savesslider', 'SliderController@saveslider');
+Route::get('/edit_slider/{id}', 'SliderController@edit_slider');
+Route::post('/updateslider', 'SliderController@updateslider');
+Route::get('/delete_slider/{id}', 'SliderController@delete_slider');
+Route::get('/unactivate_slider/{id}', 'SliderController@delete_slider');
+Route::get('/unactivate_slider/{id}', 'SliderController@unactivate_slider');
+Route::get('/activate_slider/{id}', 'SliderController@activate_slider');
