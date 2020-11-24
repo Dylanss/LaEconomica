@@ -39,6 +39,7 @@ Route::get('/categories', 'CategoryController@categories');
 Route::get('/edit_category/{id}', 'CategoryController@edit');
 Route::post('/updatecategory', 'CategoryController@updatecategory');
 Route::get('/delete/{id}', 'CategoryController@delete');
+Route::get('/view_by_cat/{name}', 'CategoryController@view_by_cat');
 
 
 Route::get('/addproduct', 'ProductController@addproduct');
