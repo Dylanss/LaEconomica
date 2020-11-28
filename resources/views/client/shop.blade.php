@@ -40,7 +40,7 @@
 						<div class="row">
 
 							@foreach ($products as $product)
-								{{-- @foreach ($categories as $category) --}}
+								
 								<div class="col-md-4 d-flex">
 									<div class="product ftco-animate">
 										<div class="img d-flex align-items-center justify-content-center" style="background-image: url(/storage/product_images/{{$product->product_image}});">
@@ -54,13 +54,15 @@
 										</div>
 										<div class="text text-center">
 											<span class="sale">Sale</span>
-											<span class="category">{{-- {{$category->category_name}} --}}</span>
+											@foreach ($categories as $category)
+											<span class="category">{{$category->category_name}}</span>
+											@endforeach  
 											<h2>{{$product->product_name}}</h2>
 											<p class="mb-0"><span class="price">S/{{$product->product_price}}</span></p>
 										</div>
 									</div>
 								</div>
-								{{-- @endforeach   --}}
+								
 							@endforeach
 						
 						</div>
