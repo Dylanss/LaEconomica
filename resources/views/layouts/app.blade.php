@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{{asset('slider/css/bootstrap-datepicker.css')}}">
     <link rel="stylesheet" href="{{asset('slider/css/jquery.timepicker.css')}}">
     <link rel="stylesheet" href="{{asset('slider/css/icomoon.css')}}">
+    @stack('styles')
 
   </head>
   <body>
@@ -147,6 +148,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="slider/js/main.js"></script>
 <!-- Slider -->
 
+@yield('scripts')
 
 </body>
 </html>

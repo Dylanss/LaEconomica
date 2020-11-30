@@ -79,15 +79,10 @@
 							@endforeach
 
 						@else
-						<tr class="alert" role="alert">
-								<td></td>
-								<td></td>
-								<td></td>
-								<td>Nada en el carrito</td>
-								<td></td>
-								<td></td>
-								<td></td>
-						</tr>
+							@if (Session::has('success'))
+								<div class="alert alert-success">{{Session::get('success')}}</div>			
+
+							@endif
 
 						@endif
 
@@ -118,7 +113,7 @@
     						<span>$17.60</span>
     					</p>
     				</div>
-    				<p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+    				<p class="text-center"><a href="/checkout" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
     			</div>
     		</div>
     	</div>
