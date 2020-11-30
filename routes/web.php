@@ -26,7 +26,8 @@ Route::get('/cart', 'ClientController@cart');
 Route::get('/checkout', 'ClientController@checkout');
 Route::get('/login', 'ClientController@login');
 Route::get('/signup', 'ClientController@signup');
-
+Route::post('/updateqty', 'ClientController@updateqty');
+Route::get('/removeitem/{id}', 'ClientController@removeitem');
 
 //Template Admin
 Route::get('/admin', 'AdminController@dashboard');
@@ -50,6 +51,7 @@ Route::post('/updateproduct', 'ProductController@updateproduct');
 Route::get('/delete_product/{id}', 'ProductController@delete_product');
 Route::get('/activate_product/{id}', 'ProductController@activate_product');
 Route::get('/unactivate_product/{id}', 'ProductController@unactivate_product');
+Route::get('/addToCart/{id}', 'ProductController@addToCart');
 
 
 Route::get('/sliders', 'SliderController@sliders');

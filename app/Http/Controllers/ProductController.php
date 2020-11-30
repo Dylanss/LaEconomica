@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Redirect;
 use App\Product;
 use App\Category;
+use Session;
+use App\Cart;
 
 class ProductController extends Controller
 {
@@ -118,36 +121,52 @@ class ProductController extends Controller
                 return redirect('/products')->with('status','The'.$product->product_name.'Product has been updated successfully');
     }
 
-            public function delete_product($id){
-                $product = Product::find($id);
+    public function delete_product($id){
+        $product = Product::find($id);
 
-                if($product->product_image !='noimage.png') {
-                    Storage::delete('public/product_images/'.$product->product_image);
-                }
+        if($product->product_image !='noimage.png') {
+            Storage::delete('public/product_images/'.$product->product_image);
+        }
 
-                $product->delete();
+        $product->delete();
 
-                return redirect('/products')->with('status','The'.$product->product_name.'Product has been deleted successfully');
-            }
+        return redirect('/products')->with('status','The'.$product->product_name.'Product has been deleted successfully');
+    }
 
-            public function activate_product($id){
-                $product = Product::find($id);
+    public function activate_product($id){
+        $product = Product::find($id);
 
-                $product->status = 1;
+        $product->status = 1;
 
-                $product->update();
+        $product->update();
 
-                return redirect('/products')->with('status','The'.$product->product_name.'Product status has been activated successfully');
-            }
+        return redirect('/products')->with('status','The'.$product->product_name.'Product status has been activated successfully');
+    }
 
-            public function unactivate_product($id){
-                $product = Product::find($id);
+    public function unactivate_product($id){
+        $product = Product::find($id);
 
-                $product->status = 0;
+        $product->status = 0;
 
-                $product->update();
+        $product->update();
 
-                return redirect('/products')->with('status','The'.$product->product_name.'Product status has been unactivated successfully');
-            }
+        return redirect('/products')->with('status','The'.$product->product_name.'Product status has been unactivated successfully');
+    }
+
+    public function addToCart($id){
+        $product = Product::find($id);
+
+        //print_r($product);
+
+        $oldCart = Session::has('cart')? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->add($product, $id);
+        Session::put('cart', $cart);
+
+        //dd(Session::get('cart'));
+        return redirect('/shop');
+
+    }
+
             
 }

@@ -28,7 +28,7 @@
 							<div class="col-md-12 d-flex justify-content-between align-items-center">
 								<h4 class="product-select">Categorías</h4>
 
-							<a href="{{URL::to('/shop')}}" class="{{(request()->is('shop')?'active':'')}}">
+						<!--	<a href="{{URL::to('/shop')}}" class="{{(request()->is('shop')?'active':'')}}">-->
 								<select class="selectpicker" multiple></a>
 									@foreach ($categories as $category)
 									<option>{{$category->category_name}}</option>
@@ -38,7 +38,7 @@
 							</div>
 						</div>
 						<div class="row">
-
+						
 							@foreach ($products as $product)
 								
 								<div class="col-md-4 d-flex">
@@ -46,17 +46,15 @@
 										<div class="img d-flex align-items-center justify-content-center" style="background-image: url(/storage/product_images/{{$product->product_image}});">
 											<div class="desc">
 												<p class="meta-prod d-flex">
-													<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
+													<a href="/addToCart/{{$product->id}}" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
 													<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
 													<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
 												</p>
 											</div>
 										</div>
 										<div class="text text-center">
-											<span class="sale">Sale</span>
-											@foreach ($categories as $category)
-											<span class="category">{{$category->category_name}}</span>
-											@endforeach  
+											<span class="sale">Sale</span>				
+											<span class="category">{{$product->product_category}}</span>
 											<h2>{{$product->product_name}}</h2>
 											<p class="mb-0"><span class="price">S/{{$product->product_price}}</span></p>
 										</div>
@@ -92,7 +90,7 @@
 
 				<li><a href="/view_by_cat/{{$category->category_name}}">{{$category->category_name}}<span class="fa fa-chevron-right"></span></a></li> 
 					@endforeach 
-                	
+				<li><a href="/shop">Todos<span class="fa fa-chevron-right"></span></a></li> 	
 	                 
                 </ul>
               </div>

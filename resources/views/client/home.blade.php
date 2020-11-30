@@ -25,8 +25,8 @@
 	        </div>
 	      </div>
 		  @endforeach
-
-	    {{--   <div class="hero-wrap" style="background-image: url('frontend/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+</section>
+	<!--    {{--   <div class="hero-wrap" style="background-image: url('frontend/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -41,7 +41,7 @@
 	        </div>
 	      </div> --}}
 	    </div>
-    </section>
+    </section>-->
  <!-- <div class="hero-wrap" style="background-image: url('frontend/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">

@@ -31,162 +31,67 @@
 						    	<th>&nbsp;</th>
 						    	<th>&nbsp;</th>
 						    	<th>Product</th>
-						      <th>Price</th>
-						      <th>Quantity</th>
-						      <th>total</th>
-						      <th>&nbsp;</th>
+						     	<th>Price</th>
+						     	<th style="width: 260px;">Quantity</th>
+						     	<th>Total</th>
+						     	<th>&nbsp;</th>
 						    </tr>
 						  </thead>
-						  <tbody>
-						    <tr class="alert" role="alert">
-						    	<td>
-						    		<label class="checkbox-wrap checkbox-primary">
-										  <input type="checkbox" checked>
-										  <span class="checkmark"></span>
-										</label>
-						    	</td>
-						    	<td>
-						    		<div class="img" style="background-image: url(frontend/images/prod-1.jpg);"></div>
-						    	</td>
-						      <td>
-						      	<div class="email">
-						      		<span>Jim Beam Kentucky Straight</span>
-						      		<span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
-						      	</div>
-						      </td>
-						      <td>$44.99</td>
-						      <td class="quantity">
-					        	<div class="input-group">
-				             	<input type="text" name="quantity" class="quantity form-control input-number" value="2" min="1" max="100">
-				          	</div>
-				          </td>
-				          <td>$89.98</td>
-						      <td>
-						      	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
-				          	</button>
-				        	</td>
+						<tbody>
+						@if (Session::has('cart'))
+							@foreach ($products as $product)
+							<tr class="alert" role="alert">
+								<td>
+										<label class="checkbox-wrap checkbox-primary">
+											<input type="checkbox" checked>
+											<span class="checkmark"></span>
+											</label>
+									</td>
+									<td>
+										<div class="img" style="background-image: url(/storage/product_images/{{$product['product_image']}});"></div>
+									</td>
+								<td>
+									<div class="email">
+										<span>{{$product['product_name']}}</span>
+										<span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
+									</div>
+								</td>
+								<td>S/{{$product['product_price']}}</td>
+								{!!Form::open(['action' => 'ClientController@updateqty', 'method' => 'POST'])!!}
+								{{csrf_field()}}
+									<td class="quantity" >
+										<div class="input-group mb-3">
+											<input type="number" name="quantity" class="quantity form-control input-number" value="{{$product['qty']}}" min="1" max="100" >
+											
+											<input type="hidden" name="id" value="{{$product['product_id']}}">
+										</div>
+										{{Form::submit('Update', ['class' => 'btn btn-success'])}}
+									</td>
+									
+                   				{!!Form::close()!!}
+							<td>S/{{$product['product_price']*$product['qty']}}</td>
+								<td>
+									<a href="/removeitem/{{$product['product_id']}}" class="close">
+									<span aria-hidden="true"><i class="fa fa-close"></i></span>
+									</a>
+								</td>
 						    </tr>
+							@endforeach
 
-						    <tr class="alert" role="alert">
-						    	<td>
-						    		<label class="checkbox-wrap checkbox-primary">
-										  <input type="checkbox">
-										  <span class="checkmark"></span>
-										</label>
-						    	</td>
-						    	<td>
-						    		<div class="img" style="background-image: url(frontend/images/prod-2.jpg);"></div>
-						    	</td>
-						      <td>
-						      	<div class="email">
-						      		<span>Jim Beam Kentucky Straight</span>
-						      		<span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
-						      	</div>
-						      </td>
-						      <td>$30.99</td>
-						      <td class="quantity">
-					        	<div class="input-group">
-				             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-				          	</div>
-				          </td>
-				          <td>$30.99</td>
-						      <td>
-						      	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
-				          	</button>
-				        	</td>
-						    </tr>
+						@else
+						<tr class="alert" role="alert">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>Nada en el carrito</td>
+								<td></td>
+								<td></td>
+								<td></td>
+						</tr>
 
-						    <tr class="alert" role="alert">
-						    	<td>
-						    		<label class="checkbox-wrap checkbox-primary">
-										  <input type="checkbox">
-										  <span class="checkmark"></span>
-										</label>
-						    	</td>
-						    	<td>
-						    		<div class="img" style="background-image: url(frontend/images/prod-3.jpg);"></div>
-						    	</td>
-						      <td>
-						      	<div class="email">
-						      		<span>Jim Beam Kentucky Straight</span>
-						      		<span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
-						      	</div>
-						      </td>
-						      <td>$35.50</td>
-						      <td class="quantity">
-					        	<div class="input-group">
-				             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-				          	</div>
-				          </td>
-				          <td>$35.50</td>
-						      <td>
-						      	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
-				          	</button>
-				        	</td>
-						    </tr>
+						@endif
 
-						    <tr class="alert" role="alert">
-						    	<td>
-						    		<label class="checkbox-wrap checkbox-primary">
-										  <input type="checkbox">
-										  <span class="checkmark"></span>
-										</label>
-						    	</td>
-						    	<td>
-						    		<div class="img" style="background-image: url(frontend/images/prod-4.jpg);"></div>
-						    	</td>
-						      <td>
-						      	<div class="email">
-						      		<span>Jim Beam Kentucky Straight</span>
-						      		<span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
-						      	</div>
-						      </td>
-						      <td>$76.99</td>
-						      <td class="quantity">
-					        	<div class="input-group">
-				             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-				          	</div>
-				          </td>
-				          <td>$76.99</td>
-						      <td>
-						      	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
-				          	</button>
-				        	</td>
-						    </tr>
-
-						    <tr class="alert" role="alert">
-						    	<td class="border-bottom-0">
-						    		<label class="checkbox-wrap checkbox-primary">
-										  <input type="checkbox">
-										  <span class="checkmark"></span>
-										</label>
-						    	</td>
-						    	<td class="border-bottom-0">
-						    		<div class="img" style="background-image: url(frontend/images/prod-5.jpg);"></div>
-						    	</td>
-						      <td class="border-bottom-0">
-						      	<div class="email">
-						      		<span>Jim Beam Kentucky Straight</span>
-						      		<span>Fugiat voluptates quasi nemo, ipsa perferendis</span>
-						      	</div>
-						      </td>
-						      <td class="border-bottom-0">$40.00</td>
-						      <td class="quantity border-bottom-0">
-					        	<div class="input-group">
-				             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-				          	</div>
-				          </td>
-				          <td class="border-bottom-0">$40.00</td>
-						      <td class="border-bottom-0">
-						      	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
-				          	</button>
-				        	</td>
-						    </tr>
+						    
 						  </tbody>
 						</table>
 					</div>

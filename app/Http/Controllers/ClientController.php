@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Slider;
 use App\Product;
 use App\Category;
+use App\Cart;
+use Session;
 
 
 class ClientController extends Controller
@@ -26,7 +28,37 @@ class ClientController extends Controller
     }
 
     public function cart(){
-        return view('client.cart');
+        if(!Session::has('cart')){
+            return view('client.cart');
+        }
+
+        $oldCart = Session::has('cart')? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        return view('client.cart', ['products' => $cart->items]);
+    }
+
+    public function updateqty(Request $request){
+        $oldCart = Session::has('cart')? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->updateQty($request->id, $request->quantity);
+        Session::put('cart', $cart);
+
+        return redirect('/cart');
+    }
+
+    public function removeitem($id){
+        $oldCart = Session::has('cart')? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->removeItem($id);
+
+        if(count($cart->items) > 0){
+            Session::put('cart', $cart);
+        }
+        else{
+            Session::forget('cart');
+        }
+
+        return redirect('/cart');
     }
 
     public function checkout(){
