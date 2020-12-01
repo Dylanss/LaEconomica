@@ -29,8 +29,10 @@ Route::get('/signup', 'ClientController@signup');
 Route::post('/updateqty', 'ClientController@updateqty');
 Route::get('/removeitem/{id}', 'ClientController@removeitem');
 Route::post('/postcheckout', 'ClientController@postcheckout');
-
-
+Route::post('/createaccount', 'ClientController@createaccount');
+Route::post('/accessaccount', 'ClientController@accessaccount');
+Route::get('/logout', 'ClientController@logout');
+ 
 //Template Admin
 Route::get('/admin', 'AdminController@dashboard');
 Route::get('/orders', 'AdminController@orders');
