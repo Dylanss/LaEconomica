@@ -10,8 +10,10 @@ use App\Cart;
 use Stripe\Charge;
 use Stripe\Stripe;
 use Session;
+use App\Order;
 use App\Client;
 use Illuminate\Support\Facades\Hash; 
+
 
 
 class ClientController extends Controller
@@ -82,15 +84,28 @@ class ClientController extends Controller
             return redirect::to('/cart'); 
             // , ['Products' => null]           
         }
+        $oldCart = Session::has('cart')? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
 
         Stripe::setApiKey('sk_test_51Ht2n6GgLxzK05OczziocR0NTBsPiQdob4UcE5nTCDXirJtxDq5rBpxNnZIe5zkIR3hyQRLPTF8kWqLsvVqyJNMn00u8On4aRo');
         try{
             $charge = Charge::create(array(
-                "amount" => Session::get('cart')->totalPrice * 100,
+                "amount" => $cart->totalPrice * 100,
                 "currency" => "usd",
                 "source" => $request->input('stripeToken'), // obtainded with Stripe.js 
                 "description" => "Test Charge"
             ));
+
+            $order = new Order();
+
+            $order->name = $request->input('name');
+            $order->address = $request->input('address');
+            $order->cart = serialize($cart);
+            $order->payment_id = $charge->id;
+            
+            $order->save();
+
+
         } catch(\Exception $e){
             Session::put('error', $e->getMessage());
             return redirect('/checkout');
@@ -146,3 +161,4 @@ class ClientController extends Controller
         return back();
     }
 }
+

@@ -37,21 +37,21 @@
 	          	<div class="col-md-12">
 	                <div class="form-group">
 	                	<label for="fullname">Full Name</label>
-	                  <input type="text" class="form-control" placeholder="">
+	                  <input type="text" class="form-control" name="name" placeholder="">
 	                </div>
 	            </div>
                 <div class="w-100"></div>
 				<div class="col-md-12">
 	                <div class="form-group">
 	                	<label for="address">Address</label>
-	                  <input type="text" class="form-control" placeholder="">
+	                  <input type="text" class="form-control" name="address" placeholder="">
 	                </div>
 	            </div>
 		            <div class="w-100"></div>
 		            <div class="col-md-12">
 		            	<div class="form-group">
 	                	<label for="namecard">Name on Card</label>
-	                  <input type="text" class="form-control" id="card-name" placeholder="">
+	                  <input type="text" class="form-control" id="card-name"  name="card-name" placeholder="">
 	                </div>
 		            </div>
 		            <div class="w-100"></div>

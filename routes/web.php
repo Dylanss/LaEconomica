@@ -66,3 +66,5 @@ Route::post('/updateslider', 'SliderController@updateslider');
 Route::get('/delete_slider/{id}', 'SliderController@delete_slider');
 Route::get('/unactivate_slider/{id}', 'SliderController@unactivate_slider');
 Route::get('/activate_slider/{id}', 'SliderController@activate_slider');
+
+Route::get('/view_pdf/{id}', 'PdfController@view_pdf');
