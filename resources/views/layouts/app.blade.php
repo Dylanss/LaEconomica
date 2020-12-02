@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>La Economica</title>
+    <title>La Económica</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -48,38 +48,38 @@
     <div class="row mb-5">
       <div class="col-sm-12 col-md">
         <div class="ftco-footer-widget mb-4">
-          <h2 class="ftco-heading-2 logo"><a href="#">Liquor <span>Store</span></a></h2>
-          <p>Far far away, behind the word mountains, far from the countries.</p>
+          <h2 class="ftco-heading-2 logo"><a href="#">LA ECONÓMICA</span></a></h2>
+          <p>Si al mundo vino, y no toma vino, ¿entonces para que vino?</p>
           <ul class="ftco-footer-social list-unstyled mt-2">
-            <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
-            <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-            <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+            {{-- <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li> --}}
+            <li class="ftco-animate"><a href="https://www.facebook.com/LicoreriaLaEconomica"><span class="fa fa-facebook"></span></a></li>
+           {{--  <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li> --}}
           </ul>
         </div>
       </div>
       <div class="col-sm-12 col-md">
         <div class="ftco-footer-widget mb-4 ml-md-4">
-          <h2 class="ftco-heading-2">My Accounts</h2>
+          <h2 class="ftco-heading-2">Mi cuenta</h2>
           <ul class="list-unstyled">
-            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Account</a></li>
-            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Register</a></li>
-            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Log In</a></li>
-            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Order</a></li>
+            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Mi cuenta</a></li>
+            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Registrarse</a></li>
+            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Iniciar sesion</a></li>
+            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Mi Orden</a></li>
           </ul>
         </div>
       </div>
       <div class="col-sm-12 col-md">
         <div class="ftco-footer-widget mb-4 ml-md-4">
-          <h2 class="ftco-heading-2">Information</h2>
+          <h2 class="ftco-heading-2">Informacion</h2>
           <ul class="list-unstyled">
-            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About us</a></li>
-            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Catalog</a></li>
-            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact us</a></li>
-            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
+            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Sobre Nosotros</a></li>
+            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Catalogo</a></li>
+            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contáctanos</a></li>
+           {{--  <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li> --}}
           </ul>
         </div>
       </div>
-      <div class="col-sm-12 col-md">
+      {{-- <div class="col-sm-12 col-md">
          <div class="ftco-footer-widget mb-4">
           <h2 class="ftco-heading-2">Quick Link</h2>
           <ul class="list-unstyled">
@@ -89,15 +89,15 @@
             <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Faq's</a></li>
           </ul>
         </div>
-      </div>
+      </div> --}}
       <div class="col-sm-12 col-md">
         <div class="ftco-footer-widget mb-4">
-          <h2 class="ftco-heading-2">Have a Questions?</h2>
+          <h2 class="ftco-heading-2">Preguntas?</h2>
           <div class="block-23 mb-3">
             <ul>
-              <li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-              <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-              <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">info@yourdomain.com</span></a></li>
+              <li><span class="icon fa fa-map marker"></span><span class="text">Jirón los Sauce 191 VMT</span></li>
+              <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+51 985886450</span></a></li>
+              <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">laembajada3@gmail.com</span></a></li>
             </ul>
           </div>
         </div>

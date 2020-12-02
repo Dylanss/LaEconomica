@@ -57,7 +57,7 @@ class ProductController extends Controller
             
                     $product->save();
             
-                    return redirect('/addproduct')->with('status','The'.$product->product_name.'Product has been saved successfully');
+                    return redirect('/addproduct')->with('status','The'.$product->product_name.'El producto ha sido guardado exitosamente');
         }else{
                      return redirect('/addproduct')->with('status1','Por favor seleccione una categoria');
         }
@@ -118,7 +118,7 @@ class ProductController extends Controller
                 }
                 $product->update();
 
-                return redirect('/products')->with('status','The'.$product->product_name.'Product has been updated successfully');
+                return redirect('/products')->with('status','The'.$product->product_name.'El Producto actualizado exitosamente');
     }
 
     public function delete_product($id){
@@ -130,7 +130,7 @@ class ProductController extends Controller
 
         $product->delete();
 
-        return redirect('/products')->with('status','The'.$product->product_name.'Product has been deleted successfully');
+        return redirect('/products')->with('status','The'.$product->product_name.' El Producto ha sido eliminado exitosamente');
     }
 
     public function activate_product($id){
@@ -140,7 +140,7 @@ class ProductController extends Controller
 
         $product->update();
 
-        return redirect('/products')->with('status','The'.$product->product_name.'Product status has been activated successfully');
+        return redirect('/products')->with('status','The'.$product->product_name.'El estado del producto ha sido activado');
     }
 
     public function unactivate_product($id){
@@ -150,7 +150,7 @@ class ProductController extends Controller
 
         $product->update();
 
-        return redirect('/products')->with('status','The'.$product->product_name.'Product status has been unactivated successfully');
+        return redirect('/products')->with('status','The'.$product->product_name.'El estado del producto ha sido desactivado');
     }
 
     public function addToCart($id){

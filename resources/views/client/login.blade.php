@@ -10,7 +10,7 @@
 
 	
 <div class="limiter">
-	<div class="container-login100" style="background-image: url('frontend/login/images/bg-01.jpg');">
+	<div class="container-login100" style="background-image: url('frontend/images/bg_4.jpg');">
 		<div class="wrap-login100">
 			@if (Session::has('error'))
 					<div class="alert alert-danger">
@@ -41,7 +41,7 @@
 				</span>
 			</a>
 				<span class="login100-form-title p-b-34 p-t-27">
-					Log in
+					Iniciar Sesión
 				</span>
 
 				<div class="wrap-input100 validate-input" data-validate = "Ingresar nombre de usuario">

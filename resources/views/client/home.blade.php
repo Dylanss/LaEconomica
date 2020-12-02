@@ -17,8 +17,8 @@
 
 	            <div class="col-md-12 ftco-animate text-center">
 	              <h1 class="mb-2"> {{$slider->description1}}</h1>
-	              <h2 class="subheading mb-4">{{$slider->description2}}</h2>
-	              <p><a href="#" class="btn btn-primary">View Details</a></p>
+	              <h1 class="subheading mb-4">{{$slider->description2}}</h1>
+	              {{-- <p><a href="#" class="btn btn-primary">View Details</a></p> --}}
 	            </div>
 
 	          </div>
@@ -104,14 +104,13 @@
 					</div>
 					<div class="col-md-6 wrap-about pl-md-5 ftco-animate py-5">
 	          <div class="heading-section">
-	          	<span class="subheading">Since 1905</span>
-	            <h2 class="mb-4">Desire Meets A New Taste</h2>
+	          	<span class="subheading">Desde 2011</span>
+	            <h2 class="mb-4">LA ECONÓMICA</h2>
 
-	            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-	            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
+	            <p>La licorería La Económica fue fundada en el año 2011 en san Gabriel, distrito de Villa María del Triunfo por medio de la necesidad de vender variedad de productos. Desde el comienzo se enfocaron en brindar buenos productos de calidad como también una buena atención al cliente, realizando promociones y realizar descuentos. Con el transcurso de los años la licorería incorporo nuevos productos y a utilizar pagos por tarjeta para brindar una solución a las necesidades del cliente.</p>
 	            <p class="year">
-	            	<strong class="number" data-number="50">0</strong>
-		            <span>Years of Experience In Business</span>
+	            	<strong class="number" data-number="09">0</strong>
+		            <span>Años de experiencia en negocios</span>
 	            </p>
 	          </div>
 
@@ -303,7 +302,7 @@
 
 
 		
-    <section class="ftco-section">
+   {{--  <section class="ftco-section">
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
@@ -374,7 +373,7 @@
           </div>
         </div>
       </div>
-    </section>	
+    </section>	 --}}
 
     
 

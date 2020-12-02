@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Liquor <span>store</span></a>
+      <a class="navbar-brand" href="index.html">LA ECONÓMICA</span></a>
       <div class="order-lg-last btn-group">
       <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="flaticon-shopping-bag"></span>
@@ -42,18 +42,18 @@
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
         <li class="nav-item"><a href="{{ URL::to('/') }}" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="{{ URL::to('/about') }}" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="{{ URL::to('/about') }}" class="nav-link">Sobre Nosotros</a></li>
           <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
-              <a class="dropdown-item" href="{{ URL::to('/shop') }}">Products</a>
-            <a class="dropdown-item" href="{{ URL::to('/') }}">Single Product</a>
-            <a class="dropdown-item" href="{{ URL::to('/cart') }}">Cart</a>
+              <a class="dropdown-item" href="{{ URL::to('/shop') }}">Productos</a>
+            {{-- <a class="dropdown-item" href="{{ URL::to('/') }}">Single Product</a> --}}
+            <a class="dropdown-item" href="{{ URL::to('/cart') }}">Carrito</a>
             <a class="dropdown-item" href="{{ URL::to('/checkout') }}">Checkout</a>
           </div>
         </li>
-          <li class="nav-item	"><a href="{{ URL::to('/blog') }}" class="nav-link">Blog</a></li>
-          <li class="nav-item"><a href="{{ URL::to('/contact') }}" class="nav-link">Contact</a></li>
+        
+          <li class="nav-item"><a href="{{ URL::to('/contact') }}" class="nav-link">Contáctanos</a></li>
           @if (Session::has('client'))
           <li class="nav-item"><a href="{{ URL::to('/logout') }}" class="nav-link">Cerrar Sesión</a></li>
           @else
