@@ -13,6 +13,8 @@ use Session;
 use App\Order;
 use App\Client;
 use Illuminate\Support\Facades\Hash; 
+use Illuminate\Support\Facades\Mail; 
+use App\MAil\sendMail;
 
 
 
@@ -104,7 +106,19 @@ class ClientController extends Controller
             $order->payment_id = $charge->id;
             
             $order->save();
+            $orders = Order::where('payment_id', $charge->id)->get();
 
+
+            $orders->transform(function($order, $key){
+                $order->cart = unserialize($order->cart);
+
+                return $order;
+                });
+
+                
+            $email = Session::get('client')->email;
+
+            Mail::to($email)->send(new SendMail($orders));
 
         } catch(\Exception $e){
             Session::put('error', $e->getMessage());
