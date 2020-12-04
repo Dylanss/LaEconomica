@@ -12,7 +12,16 @@ use App\Cart;
 
 class ProductController extends Controller
 {
-    //
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function addproduct(){
         $categories = Category::All()->pluck('category_name', 'category_name');
         return view('admin.addproduct')->with('categories', $categories);
@@ -153,20 +162,7 @@ class ProductController extends Controller
         return redirect('/products')->with('status','The'.$product->product_name.'El estado del producto ha sido desactivado');
     }
 
-    public function addToCart($id){
-        $product = Product::find($id);
 
-        //print_r($product);
-
-        $oldCart = Session::has('cart')? Session::get('cart'):null;
-        $cart = new Cart($oldCart);
-        $cart->add($product, $id);
-        Session::put('cart', $cart);
-
-        //dd(Session::get('cart'));
-        return redirect('/shop');
-
-    }
 
             
 }

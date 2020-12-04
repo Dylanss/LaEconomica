@@ -9,6 +9,16 @@ use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function addcategory(){
         return view('admin.addcategory');
     }
@@ -93,12 +103,5 @@ class CategoryController extends Controller
 
        return redirect('/categories')->with('status',' '.$category->category_name.'
          Categoria ha sido eliminado exitosamente');
-    }
-    public function view_by_cat($name)
-    {
-        $categories = Category ::get();
-        $products = Product ::where('product_category',$name)->get();
-
-        return view('client.shop')->with('products',$products)->with('categories',$categories);  
     }
 }

@@ -55,9 +55,9 @@
         
           <li class="nav-item"><a href="{{ URL::to('/contact') }}" class="nav-link">Contáctanos</a></li>
           @if (Session::has('client'))
-          <li class="nav-item"><a href="{{ URL::to('/logout') }}" class="nav-link">Cerrar Sesión</a></li>
+          <li class="nav-item"><a href="{{ URL::to('/client_logout') }}" class="nav-link">Cerrar Sesión</a></li>
           @else
-          <li class="nav-item"><a href="{{ URL::to('/login') }}" class="nav-link">Iniciar Sesión</a></li>
+          <li class="nav-item"><a href="{{ URL::to('/client_login') }}" class="nav-link">Iniciar Sesión</a></li>
           @endif
           
 

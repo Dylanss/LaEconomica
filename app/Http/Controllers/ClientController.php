@@ -24,15 +24,23 @@ class ClientController extends Controller
 
     public function home(){
         $categories = Category::get();
-        $products = Product::get();
-        $sliders = Slider::get();
+        $products = Product::where('status', 1)->get();
+        $sliders = Slider::where('status', 1)->get();
         return view('client.home')->with('sliders',$sliders)->with('products',$products)->with('categories',$categories);
     }
 
     public function shop(){
         $categories = Category::get();
-        $products = Product::get();
+        $products = Product::where('status', 1)->get();
         return view('client.shop')->with('products',$products)->with('categories',$categories);
+    }
+
+    public function view_by_cat($name)
+    {
+        $categories = Category ::get();
+        $products = Product ::where('product_category',$name)->get();
+
+        return view('client.shop')->with('products',$products)->with('categories',$categories);  
     }
 
     public function cart(){
@@ -43,6 +51,21 @@ class ClientController extends Controller
         $oldCart = Session::has('cart')? Session::get('cart'):null;
         $cart = new Cart($oldCart);
         return view('client.cart', ['products' => $cart->items]);
+    }
+
+    public function addToCart($id){
+        $product = Product::find($id);
+
+        //print_r($product);
+
+        $oldCart = Session::has('cart')? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->add($product, $id);
+        Session::put('cart', $cart);
+
+        //dd(Session::get('cart'));
+        return redirect('/shop');
+
     }
 
     public function updateqty(Request $request){
@@ -72,7 +95,7 @@ class ClientController extends Controller
     public function checkout(){
 
         if(!Session::has('client')){
-            return redirect('/login');
+            return redirect('/client_login');
         }
 
         if(!Session::has('cart')){
