@@ -10,7 +10,7 @@
 
 	
 <div class="limiter">
-	<div class="container-login100" style="background-image: url('frontend/login/images/bg-01.jpg');">
+	<div class="container-login100" style="background-image: url('frontend/images/bg_4.jpg');">
 		<div class="wrap-login100">
 			@if (Session::has('status'))
 					<div class="alert alert-success">

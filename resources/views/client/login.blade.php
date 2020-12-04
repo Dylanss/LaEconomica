@@ -37,8 +37,15 @@
 				
 			 <a href="{{URL::to('/')}}"> 
 				<span class="login100-form-logo">
-					<i class="zmdi zmdi-landscape"></i>
+					<i class="zmdi zmdi-account"></i>
 				</span>
+			{{-- 	<img src="frontend/login/images/la_economica.jpg" style="width: 250px;
+				height: 150px;
+				text-align: center;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				width: 100%;"> --}}
 			</a>
 				<span class="login100-form-title p-b-34 p-t-27">
 					Iniciar Sesión

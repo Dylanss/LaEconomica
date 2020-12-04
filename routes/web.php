@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'ClientController@home');
 Route::get('/shop', 'ClientController@shop');
 Route::get('/cart', 'ClientController@cart');
+Route::get('/contact', 'ClientController@contact');
 Route::get('/checkout', 'ClientController@checkout');
 Route::get('/client_login', 'ClientController@login');
 Route::get('/signup', 'ClientController@signup');

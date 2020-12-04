@@ -35,6 +35,10 @@ class ClientController extends Controller
         return view('client.shop')->with('products',$products)->with('categories',$categories);
     }
 
+    public function contact(){
+        return view('client.contact');
+    }
+
     public function view_by_cat($name)
     {
         $categories = Category ::get();
