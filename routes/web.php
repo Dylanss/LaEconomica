@@ -33,6 +33,7 @@ Route::post('/createaccount', 'ClientController@createaccount');
 Route::post('/accessaccount', 'ClientController@accessaccount');
 Route::get('/client_logout', 'ClientController@logout');
 Route::get('/view_by_cat/{name}', 'ClientController@view_by_cat');
+Route::get('/about', 'ClientController@about');
  
 //Template Admin
 Route::get('/admin', 'AdminController@dashboard');

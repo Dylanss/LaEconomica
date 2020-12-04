@@ -160,6 +160,13 @@ class ClientController extends Controller
         return view('client.signup');
     }
 
+    public function about(){
+        $categories = Category::get();
+        
+        $sliders = Slider::where('status', 1)->get();
+        return view('client.about')->with('sliders',$sliders)->with('categories',$categories);
+    }
+
     public function createaccount(Request $request){
         $this->validate($request,['email' => 'email|required|unique:clients',
                                   'password' => 'required|min:4']);
