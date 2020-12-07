@@ -23,71 +23,59 @@
     <section class="ftco-section">
     	<div class="container">
     		<div class="row justify-content-center">
-          <div class="col-xl-7 ftco-animate">
-		  {!!Form::open(['action' => 'ClientController@postcheckout', 'method' => 'POST', 'class' => 'billing-form', 'id' => 'checkout-form'])!!}
-			{{csrf_field()}}
-				<h3 class="mb-4 billing-heading">Billing Details</h3>
+			@if (isset($errors) && $errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                @if (session()->has('success'))
+                    <div class="alert alert-success">
+                        <ul>
+                            @foreach (session()->get('success') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 				@if(Session::has('error'))
 				<div class="alert alert-danger">
 					{{Session::get('error')}}
 					{{Session::put('error', null)}}
 				</div>
 				@endif
-	          	<div class="row align-items-end">
-	          	<div class="col-md-12">
+				
+          <div class="col-xl-7 ftco-animate">
+		  {!!Form::open(['action' => 'PaymentController@pay', 'method' => 'POST', 'id' => 'paymentForm'])!!}
+				{{csrf_field()}}
+		  <label for="">Select the desired payment platform:</label>
+		  <div class="form-group" id="toggler">
+		  <div class="btn-group btn-group-toggle" data-toggle="buttons"> 
+				@foreach ($paymentPlatforms as $paymentPlatform)
+					<label class="btn btn-outline-secondary rounded m-2 p-1" data-target="#{{ $paymentPlatform->name }}Collapse" data-toggle="collapse">
+						<input type="radio" name="payment_platform" value="{{ $paymentPlatform->id }}" required>
+						<img class="img-thumbnail" src="{{ asset($paymentPlatform->image) }}">
+					</label>
+				@endforeach
+		  </div>
+		  @foreach ($paymentPlatforms as $paymentPlatform)
+			<div id="{{ $paymentPlatform->name }}Collapse" class="collapse" data-parent="#toggler">
+				@includeIf('components.' . strtolower($paymentPlatform->name) . '-collapse')
+			</div>
+		  @endforeach
+		  
+		  <div class="col-md-12">
 	                <div class="form-group">
-	                	<label for="fullname">Full Name</label>
-	                  <input type="text" class="form-control" name="name" placeholder="">
-	                </div>
-	            </div>
-                <div class="w-100"></div>
-				<div class="col-md-12">
-	                <div class="form-group">
-	                	<label for="address">Address</label>
-	                  <input type="text" class="form-control" name="address" placeholder="">
-	                </div>
-	            </div>
-		            <div class="w-100"></div>
-		            <div class="col-md-12">
-		            	<div class="form-group">
-	                	<label for="namecard">Name on Card</label>
-	                  <input type="text" class="form-control" id="card-name"  name="card-name" placeholder="">
-	                </div>
-		            </div>
-		            <div class="w-100"></div>
-		            <div class="col-md-12">
-		            	<div class="form-group">
-	                	<label for="number">Number</label>
-	                  <input type="number" min="1" class="form-control" id="card-number" placeholder="">
-	                </div>
-		            </div>
-		            <div class="w-100"></div>
-		            <div class="col-md-6">
-	                <div class="form-group">
-	                	<label for="expmonth">Expiration Month</label>
-	                  <input type="number" class="form-control" id="card-expiry-month" placeholder="">
-	                </div>
-	              </div>
-	              <div class="col-md-6">
-	                <div class="form-group">
-	                	<label for="expyear">Expiration Year</label>
-	                  <input type="number" class="form-control" id="card-expiry-year" placeholder="">
+						<p><button type="submit" id="payButton" class="btn btn-primary py-3 px-4">Buy now</button></p>
 	                </div>
                 </div>
-                <div class="w-100"></div>
-				<div class="col-md-12">
-	                <div class="form-group">
-	                	<label for="cvc">CVC</label>
-	                  <input type="number" class="form-control" id="card-cvc" placeholder="">
-	                </div>
-                </div>
-				<div class="col-md-12">
-	                <div class="form-group">
-						<p><button type="submit" href="#"class="btn btn-primary py-3 px-4">Buy now</button></p>
-	                </div>
-                </div>
-	            </div>
-				{!!Form::close()!!}<!-- END -->
+				{!!Form::close()!!}
+		</div>
+		
 				</div>
 				
 				<div class="col-xl-5">
@@ -123,10 +111,7 @@
 
 @endsection
 
-@section('scripts')
-<script src="https://js.stripe.com/v2/"></script>
-<script src="src/js/checkout.js"></script>
-@endsection
+
 
   
 

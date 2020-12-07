@@ -15,6 +15,7 @@ use App\Client;
 use Illuminate\Support\Facades\Hash; 
 use Illuminate\Support\Facades\Mail; 
 use App\MAil\sendMail;
+use App\PaymentPlatform;
 
 
 
@@ -98,6 +99,8 @@ class ClientController extends Controller
 
     public function checkout(){
 
+        $paymentPlatforms = PaymentPlatform::all();
+
         if(!Session::has('client')){
             return redirect('/client_login');
         }
@@ -105,7 +108,9 @@ class ClientController extends Controller
         if(!Session::has('cart')){
             return redirect('/cart');
         }
-        return view('client.checkout');
+        return view('client.checkout')->with([
+            'paymentPlatforms' => $paymentPlatforms,
+        ]);
     }
 
     public function postcheckout(Request $request){
@@ -120,7 +125,7 @@ class ClientController extends Controller
         try{
             $charge = Charge::create(array(
                 "amount" => $cart->totalPrice * 100,
-                "currency" => "usd",
+                "currency" => "pen",
                 "source" => $request->input('stripeToken'), // obtainded with Stripe.js 
                 "description" => "Test Charge"
             ));
@@ -131,6 +136,7 @@ class ClientController extends Controller
             $order->address = $request->input('address');
             $order->cart = serialize($cart);
             $order->payment_id = $charge->id;
+            $order->payment_gateway = "Stripe";
             
             $order->save();
             $orders = Order::where('payment_id', $charge->id)->get();
@@ -204,7 +210,7 @@ class ClientController extends Controller
             return back()->with('error','No tienes una cuenta');
         }
     }
-    public function logout(){
+    public function client_logout(){
         Session::forget('client');
         return back();
     }

@@ -148,7 +148,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="slider/js/main.js"></script>
 <!-- Slider -->
 
-@yield('scripts')
+@stack('scripts')
 
 </body>
 </html>

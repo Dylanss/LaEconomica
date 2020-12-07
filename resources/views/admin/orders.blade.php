@@ -23,6 +23,7 @@
                             <th>Address</th>
                             <th>Cart</th>
                             <th>Payment_id</th>
+                            <th>Payment_gateway</th>
                             <th>Actions</th>
                         </tr>
                       </thead>
@@ -39,6 +40,7 @@
                             @endforeach
                           </td>
                           <td>{{ $order->payment_id }}</td>
+                          <td>{{ $order->payment_gateway }}</td>
                           <td>
                             <button class="btn btn-outline-primary" onclick="window.location='{{url('/view_pdf/'.$order->id)}}'">View</button>
                           </td>

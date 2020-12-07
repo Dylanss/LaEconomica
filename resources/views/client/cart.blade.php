@@ -80,11 +80,24 @@
 
 						@else
 							@if (Session::has('success'))
-								<div class="alert alert-success">{{Session::get('success')}}</div>			
-
+								@foreach (Session::get('success') as $message)
+								<div class="alert alert-success">{{ $message }}</div>			
+								@endforeach
 							@endif
 
 						@endif
+
+						@if (isset($errors) && $errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+               
 
 						    
 						  </tbody>

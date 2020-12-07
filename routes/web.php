@@ -70,6 +70,11 @@ Route::get('/activate_slider/{id}', 'SliderController@activate_slider');
 
 Route::get('/view_pdf/{id}', 'PdfController@view_pdf');
 
+//Paypal-MercadoPago
+Route::post('/pay', 'PaymentController@pay');
+Route::get('/approval', 'PaymentController@approval')->name('approval');
+Route::get('/cancelled', 'PaymentController@cancelled')->name('cancelled');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

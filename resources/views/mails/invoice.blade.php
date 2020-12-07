@@ -185,7 +185,7 @@
                             <td>{{$item['qty']}}</td>
                             <td>{{$item['product_price']}}</td>
                             <td>
-                                s/{{$item['product_price']*$item['qty']}}
+                                S/{{$item['product_price']*$item['qty']}}
                             </td>
                         </tr>
                     @endforeach
@@ -195,7 +195,7 @@
                         <td></td>
                         <td></td>
                         <td>
-                           Total: s/{{$order->cart->totalPrice}}
+                           Total: S/{{$order->cart->totalPrice}}
                         </td>
                     </tr>
 
