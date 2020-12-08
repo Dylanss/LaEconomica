@@ -2,15 +2,15 @@
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="index.html">
-              <i class="ti-home menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
+              <i class="fas fa-home"></i>
+              <span class="menu-title">&nbsp;&nbsp;Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-              <i class="ti-clipboard menu-icon"></i>
-              <span class="menu-title">Creación</span>
-              <i class="menu-arrow"></i>
+              <i class="fas fa-plus"> </i>
+              <span class="menu-title">&nbsp;&nbsp;&nbsp;Creación&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+              <i class="fas fa-arrow-down"></i>
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
@@ -22,9 +22,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-              <i class="ti-layout menu-icon"></i>
-              <span class="menu-title">Vista</span>
-              <i class="menu-arrow"></i>
+              <i class="fas fa-eye" size="9"></i>
+              <span class="menu-title">&nbsp;&nbsp; Vista&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <i class="fas fa-arrow-down"></i>
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">

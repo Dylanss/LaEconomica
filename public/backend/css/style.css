@@ -13578,7 +13578,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #27293d;
+  background-color: #212121;
   background-clip: border-box;
   border: 1px solid #313452;
   border-radius: 0;
@@ -18657,7 +18657,7 @@ code {
 
 /* Footer */
 .footer {
-  background: #1e1e2f;
+  background: #212121;
   padding: 30px 2.45rem;
   transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
@@ -27298,7 +27298,7 @@ div.tagsinput span.tag a {
 }
 
 .content-wrapper {
-  background: #1e1e2f;
+  background: #000;
   padding: 2.68rem 2.5rem;
   width: 100%;
   -webkit-flex-grow: 1;
@@ -27314,7 +27314,7 @@ div.tagsinput span.tag a {
 /* Sidebar */
 .sidebar {
   min-height: calc(100vh - 70px);
-  background: #1e1e2f;
+  background: #212121;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   padding: 0;
@@ -27558,7 +27558,7 @@ div.tagsinput span.tag a {
 }
 
 .navbar .navbar-brand-wrapper {
-  background: #1e1e2f;
+  background: #212121;
   transition: width 0.25s ease, background 0.25s ease;
   -webkit-transition: width 0.25s ease, background 0.25s ease;
   -moz-transition: width 0.25s ease, background 0.25s ease;
@@ -27602,7 +27602,7 @@ div.tagsinput span.tag a {
 }
 
 .navbar .navbar-menu-wrapper {
-  background: #1e1e2f;
+  background: #212121;
   transition: width 0.25s ease;
   -webkit-transition: width 0.25s ease;
   -moz-transition: width 0.25s ease;
@@ -28063,7 +28063,7 @@ div.tagsinput span.tag a {
 }
 
 .navbar.navbar-danger .navbar-menu-wrapper .nav-item .nav-link.count-indicator .count {
-  background: #248afd;
+  background: #212121;
 }
 
 @media (max-width: 991px) {

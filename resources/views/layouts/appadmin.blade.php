@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="{{asset('backend/css/themify-icons.css')}}">
   <link rel="stylesheet" href="{{asset('backend/css/vendor.bundle.base.css')}}">
   <link rel="stylesheet" href="{{asset('backend/css/vendor.bundle.addons.css')}}">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesHeet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <link href="assets/css/themify-icons.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
@@ -60,6 +65,8 @@
   <script src="{{asset('backend/js/settings.js')}}"></script>
   <script src="{{asset('backend/js/todolist.js')}}"></script>
   <script src="{{asset('backend/js/bootbox.min.js')}}"></script>
+  
+  <script src="{{asset('backend/css/themify-icons.css')}}"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
   @yield('scripts')
