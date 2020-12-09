@@ -86,7 +86,7 @@
 	          			<h3 class="billing-heading mb-4">Cart Total</h3>
 	          			<p class="d-flex">
 		    						<span>Subtotal</span>
-		    						<span></span>
+		    						<span>S/{{Session::get('cart')->totalPrice}}</span>
 		    					</p>
 		    					<p class="d-flex">
 		    						<span>Delivery</span>

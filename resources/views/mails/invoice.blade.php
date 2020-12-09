@@ -111,7 +111,7 @@
                             <table>
                                 <tr>
                                     <td class="title">
-                                        <h2>La economica</h2>
+                                        <h2>La Económica</h2>
                                     </td>
                                     
                                     <td>

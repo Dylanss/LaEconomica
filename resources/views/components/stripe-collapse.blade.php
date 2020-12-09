@@ -35,7 +35,7 @@
 
 @endpush
 			
-				<div class="align-items-end">
+				<div class="align-items-end form-row">
 				<div class="col-md-12">
 	                <div class="form-group">
 	                	<label for="fullname">Full Name</label>
@@ -57,14 +57,15 @@
 	                </div>
 		            </div>
 					<div class="w-100"></div>
-				<label class="mt-3">Card details:</label>
-				<div id="cardElement"></div>
-				<small class="form-text text-muted" id="cardErrors" role="alert"></small>
-				<input type="hidden" name="payment_method" id="paymentMethod">
+				
 
 				</div>
-	            
 				
+	            <label class="mt-2">Card details:</label>
+				<div id="cardElement" ></div>
+				<small class="form-text text-muted" id="cardErrors" role="alert"></small>
+				<input type="hidden" name="payment_method" id="paymentMethod">
+				<br>
 
 @push('scripts')
 <script src="https://js.stripe.com/v3/"></script>
