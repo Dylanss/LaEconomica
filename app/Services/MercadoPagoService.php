@@ -5,6 +5,13 @@ namespace App\Services;
 use Illuminate\Http\Request;
 use App\Traits\ConsumesExternalServices;
 use App\Services\CurrencyConversionService;
+use App\Cart;
+use Session;
+use App\Order;
+use App\Client;
+use Illuminate\Support\Facades\Hash; 
+use Illuminate\Support\Facades\Mail; 
+use App\MAil\sendMail;
 
 class MercadoPagoService
 {
@@ -51,31 +58,68 @@ class MercadoPagoService
             'card_network' => 'required',
             'card_token' => 'required',
             'email' => 'required',
+            'streetname' => 'required',
+            'streetnumber' => 'required',
+            'zipcode' => 'required',
+            'cityname' => 'required',
+            'statename' => 'required',
         ]);
 
         $payment = $this->createPayment(
             $request->value,
-            $request->currency,
             $request->card_network,
             $request->card_token,
             $request->email,
+            $request->streetname,
+            $request->streetnumber,
+            $request->zipcode,
+            $request->cityname,
+            $request->statename
         );
 
         if ($payment->status === "approved") {
+            $id = $payment->id;
             $name = $payment->payer->first_name;
+            $number = $payment->payer->identification->number;
             $currency = strtoupper($payment->currency_id);
             $amount = number_format($payment->transaction_amount, 0, ',', '.');
 
-            $originalAmount = $request->value;
-            $originalCurrency = strtoupper($request->currency);
+            $street_name = $payment->additional_info->shipments->receiver_address->street_name;
+            $street_number = $payment->additional_info->shipments->receiver_address->street_number;
+            $zip_code = $payment->additional_info->shipments->receiver_address->zip_code;
+            $city_name = $payment->additional_info->shipments->receiver_address->city_name;   
+            $state_name = $payment->additional_info->shipments->receiver_address->state_name;
 
-            return redirect()
-                ->route('home')
-                ->withSuccess(['payment' => "Thanks, {$name}. We received your {$originalAmount}{$originalCurrency} payment ({$amount}{$currency})."]);
+            $oldCart = Session::has('cart')? Session::get('cart'):null;
+            $cart = new Cart($oldCart);
+
+            $order = new Order();
+
+            $order->name = $name;
+            $order->address = "$street_name "."$street_number "."$zip_code "."$city_name "."$state_name ";
+            $order->cart = serialize($cart);
+            $order->payment_id = $id;
+            $order->payment_gateway = "MercadoPago";
+
+            $order->save();
+            $orders = Order::where('payment_id', $id)->get();
+
+            $orders->transform(function($order, $key){
+                $order->cart = unserialize($order->cart);
+    
+                return $order;
+                });
+
+            $email = Session::get('client')->email;
+    
+            Mail::to($email)->send(new SendMail($orders));
+            
+            Session::forget('cart');
+            return redirect('/shop')
+                ->with('success', ['payment' => "Thanks, {$name}. We received your {$amount}{$currency} payment."]);
         }
 
-        return redirect()
-            ->route('home')
+        return redirect('/checkout')
             ->withErrors('We were unable to confirm your payment. Try again, please');
     }
 
@@ -84,8 +128,19 @@ class MercadoPagoService
         //
     }
 
-    public function createPayment($value, $currency, $cardNetwork, $cardToken, $email, $installments = 1)
+    public function createPayment($value, $cardNetwork, $cardToken, $email, $streetname, $streetnumber,$zipcode, $cityname, $statename)
     {
+
+        if(!Session::has('cart')){
+            return redirect::to('/cart'); 
+            // , ['Products' => null]           
+        }
+
+        $oldCart = Session::has('cart')? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+
+        $value = $cart->totalPrice;
+
         return $this->makeRequest(
             'POST',
             '/v1/payments',
@@ -94,11 +149,22 @@ class MercadoPagoService
                 'payer' => [
                     'email' => $email,
                 ],
+                'additional_info' => [
+                    'shipments' => [
+                        'receiver_address' => [
+                            'street_name' => $streetname,
+				            'street_number'=> $streetnumber,
+				            'zip_code' => $zipcode,
+				            'city_name' => $cityname,
+				            'state_name' => $statename,
+                        ],
+                    ],
+                ],
                 'binary_mode' => true,
-                'transaction_amount' =>round($value * $this->resolveFactor($currency)),
+                'transaction_amount' =>round($value * $this->resolveFactor("PEN"), 2),
                 'payment_method_id' => $cardNetwork,
                 'token' => $cardToken,
-                'installments' => $installments,
+                'installments' => 1,
                 'statement_descriptor' => config('app.name'),
             ],
             [],

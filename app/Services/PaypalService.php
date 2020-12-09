@@ -111,7 +111,7 @@ class PaypalService
             Mail::to($email)->send(new SendMail($orders));
             
             Session::forget('cart');
-            return redirect('/shop')->with('success', ['payment' => "Thanks, {$name}. We received your {$amount}{$currency} payment con direccion de {$address1 } {$area_2 } {$area_1 } {$postcode } {$countcode }"]);
+            return redirect('/shop')->with('success', ['payment' => "Thanks, {$name}. We received your {$amount}{$currency} payment"]);
         }
 
         return redirect('/checkout')

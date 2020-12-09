@@ -8,7 +8,7 @@
 {{Form::hidden('',$increment=1)}}
 <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Products</h4>
+              <h4 class="card-title">Productos</h4>
               @if (Session::has('status'))
                               <div class="alert alert-success">
                                 {{Session::get('status')}}    
@@ -20,13 +20,13 @@
                     <table id="order-listing" class="table">
                       <thead>
                         <tr>
-                            <th>Order #</th>
+                            <th>Orden</th>
                             <th>Imagen</th>
                             <th>Nombre del producto</th>
                             <th>Precio</th>
-                            <th>Categoria</th>
-                            <th>Status</th>
-                            <th>Actions</th>
+                            <th>Categoría</th>
+                            <th>Estado</th>
+                            <th>Opciones</th>
                         </tr>
                       </thead>
                       <tbody>

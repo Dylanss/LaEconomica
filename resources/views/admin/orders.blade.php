@@ -1,7 +1,7 @@
 @extends('layouts.appadmin')
 
 @section('title')
-    Orders
+    Ordenes
 @endsection
 
 @section('content')
@@ -18,13 +18,13 @@
                     <table id="order-listing" class="table">
                       <thead>
                         <tr>
-                            <th>Order #</th>
-                            <th>Client Name</th>
-                            <th>Address</th>
+                            <th>Orden #</th>
+                            <th>Nombre del cliente</th>
+                            <th>Dirección</th>
                             <th>Cart</th>
-                            <th>Payment_id</th>
-                            <th>Payment_gateway</th>
-                            <th>Actions</th>
+                            <th>id de Pago</th>
+                            <th>Forma de Pago</th>
+                            <th>Opciones</th>
                         </tr>
                       </thead>
                       <tbody>

@@ -14,11 +14,11 @@
                         {{csrf_field()}}
                             <div class="form-group">
                                 {{Form::hidden('id', $slider->id)}}
-                                {{Form::label('', 'Descripcion 1', ['for' => 'cname'])}}
+                                {{Form::label('', 'Descripción 1', ['for' => 'cname'])}}
                                 {{Form::text('description_one', $slider->description1, ['class' => 'form-control', 'minlength' => '2'])}}
                             </div>
                             <div class="form-group">
-                                {{Form::label('', 'Descripcion 2', ['for' => 'cname'])}}
+                                {{Form::label('', 'Descripción 2', ['for' => 'cname'])}}
                                 {{Form::text('description_two', $slider->description2, ['class' => 'form-control', 'minlength' => '2'])}}
                             </div>
                             <div class="form-group">

@@ -1,42 +1,101 @@
-<label class="mt-3">Card details:</label>
-
-<div class="form-group form-row">
-    <div class="col-5">
-        <input class="form-control" type="text" id="cardNumber" data-checkout="cardNumber" placeholder="Card Number">
-    </div>
-
-    <div class="col-2">
-        <input class="form-control" type="text" data-checkout="securityCode" placeholder="CVC">
-    </div>
-
-    <div class="col-1"></div>
-
-    <div class="col-1">
-        <input class="form-control" type="text" data-checkout="cardExpirationMonth" placeholder="MM">
-    </div>
-
-    <div class="col-1">
-        <input class="form-control" type="text" data-checkout="cardExpirationYear" placeholder="YY">
-    </div>
+<div class="align-items-end form-row">
+    
+            <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                    <input class="form-control" type="text" data-checkout="cardholderName" >
+                    </div>
+            </div>
+            <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="fullname">Email</label>
+                    <input class="form-control" type="email" data-checkout="cardholderEmail"  name="email">
+                    </div>
+            </div>
+    
 </div>
-
-<div class="form-group form-row">
-    <div class="col-5">
-        <input class="form-control" type="text" data-checkout="cardholderName" placeholder="Your Name">
-    </div>
-
-    <div class="col-5">
-        <input class="form-control" type="email" data-checkout="cardholderEmail" placeholder="email@example.com" name="email">
-    </div>
+<div class="align-items-end form-row">
+    
+            <div class="col-md-9">
+                    <div class="form-group">
+                        <label for="streetname">Street Name</label>
+                    <input class="form-control" type="text" name="streetname" >
+                    </div>
+            </div>
+            <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="streetnumber">Street Number</label>
+                    <input class="form-control" type="text" name="streetnumber">
+                    </div>
+            </div>
+    
 </div>
-
-<div class="form-group form-row">
-    <div class="col-2">
-        <select class="custom-select" data-checkout="docType"></select>
+<div class="align-items-end form-row">
+    
+            <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="zipcode">Zip Code</label>
+                    <input class="form-control" type="text" name="zipcode" >
+                    </div>
+            </div>
+            <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="cityname">City Name</label>
+                    <input class="form-control" type="text" name="cityname">
+                    </div>
+            </div>
+            <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="statename">State Name</label>
+                    <input class="form-control" type="text" name="statename" >
+                    </div>
+            </div>
+    
+</div>
+<div class="align-items-end form-row">
+    
+            <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="fullname">Card Number</label>
+                    <input class="form-control" type="text" id="cardNumber" data-checkout="cardNumber">
+                    </div>
+            </div>
+            <div class="col-md-1">
+                    <div class="form-group">
+                        <label for="fullname">MM</label>
+                    <input class="form-control" type="text" data-checkout="cardExpirationMonth">
+                    </div>
+            </div>
+            <div class="col-md-1">
+                    <div class="form-group">
+                        <label for="fullname">YY</label>
+                    <input class="form-control" type="text" data-checkout="cardExpirationYear">
+                    </div>
+            </div>
+            <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="fullname">CVV</label>
+                    <input class="form-control" type="text" data-checkout="securityCode">
+                    </div>
+            </div>
+            
+    
+</div>
+<div class="align-items-end form-row">
+    
+    <div class="col-md-2">
+        <div class="form-group">
+        <label for="doctype">Tipo</label>
+            <select class="form-control" data-checkout="docType"></select>
+        </div>
     </div>
-    <div class="col-3">
-        <input class="form-control" type="text" data-checkout="docNumber" placeholder="Document">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="doctype">Documento</label>
+            <input class="form-control" type="text" data-checkout="docNumber">
+        </div>
     </div>
+    
 </div>
 
 <div class="form-group form-row">
