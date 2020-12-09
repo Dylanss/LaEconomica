@@ -22,8 +22,7 @@
 
     <section class="ftco-section">
     	<div class="container">
-    		<div class="row justify-content-center">
-			@if (isset($errors) && $errors->any())
+		@if (isset($errors) && $errors->any())
                     <div class="alert alert-danger">
                         <ul>
                             @foreach ($errors->all() as $error)
@@ -48,6 +47,8 @@
 					{{Session::put('error', null)}}
 				</div>
 				@endif
+    		<div class="row justify-content-center">
+			
 				
           <div class="col-xl-7 ftco-animate">
 		  {!!Form::open(['action' => 'PaymentController@pay', 'method' => 'POST', 'id' => 'paymentForm'])!!}
@@ -85,15 +86,15 @@
 	          			<h3 class="billing-heading mb-4">Cart Total</h3>
 	          			<p class="d-flex">
 		    						<span>Subtotal</span>
-		    						<span>$20.60</span>
+		    						<span></span>
 		    					</p>
 		    					<p class="d-flex">
 		    						<span>Delivery</span>
-		    						<span>$0.00</span>
+		    						<span>S/0.00</span>
 		    					</p>
 		    					<p class="d-flex">
 		    						<span>Discount</span>
-		    						<span>$3.00</span>
+		    						<span>S/0.00</span>
 		    					</p>
 		    					<hr>
 		    					<p class="d-flex total-price">

@@ -74,9 +74,15 @@
 					</button>
 				</div>
 
-				<div class="text-center p-t-90">
+				<div class="text-center p-t-90 txt1">
+					No tienes una cuenta ?
 					<a class="txt1" href="/signup">
-						No tienes una cuenta ? Registrate aqui
+						 Registrate aqui
+					</a>
+				</div>
+				<div class="text-center p-t-10">
+					<a class="txt1" href="/">
+						Volver a {{ config('app.name') }}
 					</a>
 				</div>
 			</form>

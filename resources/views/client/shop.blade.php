@@ -25,7 +25,23 @@
 				<div class="row">
 					<div class="col-md-9">
 						<div class="row mb-4">
+            @if (Session::has('success'))
+								@foreach (Session::get('success') as $message)
+								<div class="alert alert-success">{{ $message }}</div>			
+								@endforeach
+							@endif
+
+              @if (isset($errors) && $errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 							<div class="col-md-12 d-flex justify-content-between align-items-center">
+
 								<h4 class="product-select">Categorías</h4>
 
 						<!--	<a href="{{URL::to('/shop')}}" class="{{(request()->is('shop')?'active':'')}}">-->
@@ -65,19 +81,7 @@
 						
 						</div>
 						<div class="row mt-5">
-		          <div class="col text-center">
-		            <div class="block-27">
-		              <ul>
-		                <li><a href="#">&lt;</a></li>
-		                <li class="active"><span>1</span></li>
-		                <li><a href="#">2</a></li>
-		                <li><a href="#">3</a></li>
-		                <li><a href="#">4</a></li>
-		                <li><a href="#">5</a></li>
-		                <li><a href="#">&gt;</a></li>
-		              </ul>
-		            </div>
-		          </div>
+		          
 		        </div>
 					</div>
 

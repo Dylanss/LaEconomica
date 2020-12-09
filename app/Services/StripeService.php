@@ -76,7 +76,7 @@ class StripeService
     public function handleApproval()
     {
         Session::forget('cart');
-        return redirect('/cart')->with('success', 'Purchase accomplished successfully !');
+        return redirect('/shop')->with('success', ['payment' =>'Purchase accomplished successfully !']);
     }
     
 }

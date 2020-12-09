@@ -153,7 +153,7 @@
             
             <tr class="details">
                 <td>
-                   Tarjeta de Credito
+                    {{$order->payment_gateway}}
                 </td>
                 
                 <td>

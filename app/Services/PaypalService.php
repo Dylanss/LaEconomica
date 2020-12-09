@@ -91,7 +91,7 @@ class PaypalService
             $order = new Order();
 
             $order->name = $name;
-            $order->address = "$address1"."$area_2"."$area_1"."$postcode"."$countcode";
+            $order->address = "$address1 "."$area_2 "."$area_1 "."$postcode "."$countcode ";
             $order->cart = serialize($cart);
             $order->payment_id = $id;
             $order->payment_gateway = "Paypal";
@@ -111,10 +111,10 @@ class PaypalService
             Mail::to($email)->send(new SendMail($orders));
             
             Session::forget('cart');
-            return redirect('/cart')->with('success', ['payment' => "Thanks, {$name}. We received your {$amount}{$currency} payment con direccion de {$address1}.{$area_2}.{$area_1}.{$postcode}.{$countcode}"]);
+            return redirect('/shop')->with('success', ['payment' => "Thanks, {$name}. We received your {$amount}{$currency} payment con direccion de {$address1 } {$area_2 } {$area_1 } {$postcode } {$countcode }"]);
         }
 
-        return redirect('/cart')
+        return redirect('/checkout')
             ->with('We cannot capture payment. Try again, please');
     }
 

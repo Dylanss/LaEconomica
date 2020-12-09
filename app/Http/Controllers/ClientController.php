@@ -25,7 +25,7 @@ class ClientController extends Controller
 
     public function home(){
         $categories = Category::get();
-        $products = Product::where('status', 1)->get();
+        $products = Product::where('status', 1)->latest()->take(4)->get();
         $sliders = Slider::where('status', 1)->get();
         return view('client.home')->with('sliders',$sliders)->with('products',$products)->with('categories',$categories);
     }
@@ -50,7 +50,7 @@ class ClientController extends Controller
 
     public function cart(){
         if(!Session::has('cart')){
-            return view('client.cart');
+            return redirect('/shop');
         }
 
         $oldCart = Session::has('cart')? Session::get('cart'):null;

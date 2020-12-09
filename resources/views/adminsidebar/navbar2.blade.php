@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="{{URL::to('/admin')}}">
               <i class="fas fa-home"></i>
               <span class="menu-title">&nbsp;&nbsp;Dashboard</span>
             </a>

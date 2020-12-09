@@ -32,7 +32,7 @@ Route::get('/removeitem/{id}', 'ClientController@removeitem');
 Route::post('/postcheckout', 'ClientController@postcheckout');
 Route::post('/createaccount', 'ClientController@createaccount');
 Route::post('/accessaccount', 'ClientController@accessaccount');
-Route::get('/client_logout', 'ClientController@logout');
+Route::get('/client_logout', 'ClientController@client_logout');
 Route::get('/view_by_cat/{name}', 'ClientController@view_by_cat');
 Route::get('/about', 'ClientController@about');
  
