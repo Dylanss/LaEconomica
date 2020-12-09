@@ -14,7 +14,7 @@
         <div class="row no-gutters slider-text align-items-end justify-content-center">
           <div class="col-md-9 ftco-animate mb-5 text-center">
           	<p class="breadcrumbs mb-0"><span class="mr-2"><a href="{{ URL::to('/') }}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Products <i class="fa fa-chevron-right"></i></span></p>
-            <h2 class="mb-0 bread">Products</h2>
+            <h2 class="mb-0 bread">Productos</h2>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@
 								
 								<div class="col-md-4 d-flex">
 									<div class="product ftco-animate">
-										<div class="img d-flex align-items-center justify-content-center" style="background-image: url(/storage/product_images/{{$product->product_image}});">
+										<div class="img d-flex align-items-center justify-content-center" style="background-image: url('/storage/product_images/{{$product->product_image}}');">
 											<div class="desc">
 												<p class="meta-prod d-flex">
 													<a href="/addToCart/{{$product->id}}" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -100,7 +100,7 @@
               </div>
             </div>
 
-            <div class="sidebar-box ftco-animate">
+           {{--  <div class="sidebar-box ftco-animate">
               <h3>Recent Blog</h3>
               <div class="block-21 mb-4 d-flex">
                 <a class="blog-img mr-4" style="background-image: url(frontend/images/image_1.jpg);"></a>
@@ -132,7 +132,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
 					</div>
 				</div>
 			</div>

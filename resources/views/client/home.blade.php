@@ -124,38 +124,38 @@
 				<div class="row">
 					<div class="col-lg-2 col-md-4 ">
 						<div class="sort w-100 text-center ftco-animate">
-							<div class="img" style="background-image: url(frontend/images/kind-1.jpg);"></div>
-							<h3>Brandy</h3>
+							<div class="img" style="background-image: url(frontend/images/cateron.jpg);"></div>
+							<h3>Ron</h3>
 						</div>
 					</div>
 					<div class="col-lg-2 col-md-4 ">
 						<div class="sort w-100 text-center ftco-animate">
-							<div class="img" style="background-image: url(frontend/images/kind-2.jpg);"></div>
-							<h3>Gin</h3>
+							<div class="img" style="background-image: url(frontend/images/catewhisky.jpg);"></div>
+							<h3>Whisky</h3>
 						</div>
 					</div>
 					<div class="col-lg-2 col-md-4 ">
 						<div class="sort w-100 text-center ftco-animate">
-							<div class="img" style="background-image: url(frontend/images/kind-3.jpg);"></div>
-							<h3>Rum</h3>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-4 ">
-						<div class="sort w-100 text-center ftco-animate">
-							<div class="img" style="background-image: url(frontend/images/kind-4.jpg);"></div>
-							<h3>Tequila</h3>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-4 ">
-						<div class="sort w-100 text-center ftco-animate">
-							<div class="img" style="background-image: url(frontend/images/kind-5.jpg);"></div>
+							<div class="img" style="background-image: url(frontend/images/catevodka.jpg);"></div>
 							<h3>Vodka</h3>
 						</div>
 					</div>
 					<div class="col-lg-2 col-md-4 ">
 						<div class="sort w-100 text-center ftco-animate">
-							<div class="img" style="background-image: url(frontend/images/kind-6.jpg);"></div>
-							<h3>Whiskey</h3>
+							<div class="img" style="background-image: url(frontend/images/catevino.jpg);"></div>
+							<h3>Vinos</h3>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-4 ">
+						<div class="sort w-100 text-center ftco-animate">
+							<div class="img" style="background-image: url(frontend/images/catepisco.jpg);"></div>
+							<h3>Pisco</h3>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-4 ">
+						<div class="sort w-100 text-center ftco-animate">
+							<div class="img" style="background-image: url(frontend/images/cervezacate.jpg);"></div>
+							<h3>Cervezas</h3>
 						</div>
 					</div>
 
