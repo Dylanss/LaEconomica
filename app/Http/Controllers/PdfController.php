@@ -18,7 +18,7 @@ class PdfController extends Controller
             return $pdf->stream();
         }
         catch(\ Exception $e){
-            return redirect::to('/orders')->with('error', $e->getMessage());
+            return redirect('/orders')->with('error', $e->getMessage());
         }
     }
 
@@ -40,15 +40,16 @@ class PdfController extends Controller
             return $order;
         });
 
-
         $output = '<link rel="stylesheet" href="frontend/css/style.css">
-        <table class="table">
+        <h1>LA ECONOMICA</h1>
+        <table class="">
             <thead class="thead">
                 <tr class="text-left">
-                    <th>Client Name : '.$name.'<br> Client Address : '.$address.' <br> Date : '.$date.'</th>
+                    <th>Nombre del Cliente : '.$name.'<br> Dirección : '.$address.' <br> Fecha : '.$date.'</th>
                 </tr>
             </thead>
         </table>
+        <br>
         <table class="table">
             <thead class="thead-primary">
                 <tr class="text-center">
@@ -60,6 +61,8 @@ class PdfController extends Controller
                 </tr>
             </thead>
             <tbody>';
+        
+
 
 foreach($orders as $order){
 foreach($order->cart->items as $item){
@@ -85,7 +88,7 @@ $output .='</table>';
 
 $output .='<table class="table">
         <thead class="thead">
-            <tr class="text-center">
+            <tr class="text-center"> 
                     <th>Total</th>
                     <th>$ '.$totalPrice.'</th>
             </tr>
