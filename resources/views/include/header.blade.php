@@ -17,7 +17,6 @@
                 </p>
         </div>
         <div class="reg">
-            <p class="mb-0"><a href="#" class="mr-2">Sign Up</a> <a href="#">Log In</a></p>
         </div>
             </div>
         </div>

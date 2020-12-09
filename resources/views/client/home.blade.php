@@ -10,7 +10,7 @@
 		  <div class="home-slider owl-carousel">
 
 		@foreach ($sliders as $slider)
-	      <div class="hero-wrap" style="background-image: url(/storage/slider_images/{{$slider->slider_image}});" data-stellar-background-ratio="0.5">
+	      <div class="hero-wrap" style="background-image: url('/storage/slider_images/{{$slider->slider_image}}');" data-stellar-background-ratio="0.5">
 	      	<div class="overlay"></div>
 	        <div class="container">
 	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -89,7 +89,7 @@
 							</div>
 							<div class="text">
 								<h2>Delivery </h2>
-								<p>Desde  7.50</p>
+								<p>Gratis - Por Esta Cuarentena</p>
 							</div>
 						</div>
 					</div>
@@ -176,7 +176,7 @@
 						 
 							<div class="col-md-3 d-flex">
 								<div class="product ftco-animate">
-									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(/storage/product_images/{{$product->product_image}});">
+									<div class="img d-flex align-items-center justify-content-center" style="background-image: url('/storage/product_images/{{$product->product_image}}');">
 										<div class="desc">
 											<p class="meta-prod d-flex">
 												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -201,7 +201,7 @@
 				</div>
 				<div class="row justify-content-center">
 					<div class="col-md-4">
-						<a href="product.html" class="btn btn-primary d-block">View All Products <span class="fa fa-long-arrow-right"></span></a>
+						<a href="{{ URL::to('/shop') }}" class="btn btn-primary d-block">View All Products <span class="fa fa-long-arrow-right"></span></a>
 					</div>
 				</div>
 			</div>

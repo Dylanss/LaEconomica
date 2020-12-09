@@ -48,7 +48,7 @@
 											</label>
 									</td>
 									<td>
-										<div class="img" style="background-image: url(/storage/product_images/{{$product['product_image']}});"></div>
+										<div class="img" style="background-image: url('/storage/product_images/{{$product['product_image']}}');"></div>
 									</td>
 								<td>
 									<div class="email">
