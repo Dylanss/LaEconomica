@@ -142,7 +142,7 @@
 					</div>
 					<div class="col-lg-2 col-md-4 ">
 						<div class="sort w-100 text-center ftco-animate">
-							<div class="img" style="background-image: url(frontend/images/catevino.jpg);"></div>
+							<div class="img" style="background-image: url(frontend/images/catevinos.jpg);"></div>
 							<h3>Vinos</h3>
 						</div>
 					</div>
@@ -176,7 +176,7 @@
 						 
 							<div class="col-md-3 d-flex">
 								<div class="product ftco-animate">
-									<div class="img d-flex align-items-center justify-content-center" style="background-image: url(/storage/product_images/{{$product->product_image}});">
+									<div class="img d-flex align-items-center justify-content-center" style="background-image: url('/storage/product_images/{{$product->product_image}}');">
 										<div class="desc">
 											<p class="meta-prod d-flex">
 												<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>

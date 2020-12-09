@@ -13,7 +13,7 @@
         <div class="row no-gutters slider-text align-items-end justify-content-center">
           <div class="col-md-9 ftco-animate mb-5 text-center">
           	<p class="breadcrumbs mb-0"><span class="mr-2"><a href="{{ URL::to('/') }}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Contact Us <i class="fa fa-chevron-right"></i></span></p>
-            <h2 class="mb-0 bread">Contact Us</h2>
+            <h2 class="mb-0 bread">Contáctanos</h2>
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@
 				        			<span class="fa fa-paper-plane"></span>
 				        		</div>
 				        		<div class="text">
-					            <p><span>Email:</span> <a href="mailto:info@yoursite.com">laembajada3@gmail.com</a></p>
+					            <p><span>Email:</span> <a href="mailto:info@yoursite.com">económica@gmail.com</a></p>
 					          </div>
 				          </div>
 								</div>

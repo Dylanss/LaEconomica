@@ -28,23 +28,23 @@
                         {{csrf_field()}}
                             <div class="form-group">
                                 {{Form::hidden('id', $product->id)}}
-                                {{Form::label('', 'Product Name', ['for' => 'cname'])}}
+                                {{Form::label('', 'Nombre del producto', ['for' => 'cname'])}}
                                 {{Form::text('product_name', $product->product_name, ['class' => 'form-control', 'minlength' => '2'])}}
                             </div>
                             <div class="form-group">
-                                {{Form::label('', 'Product Price', ['for' => 'cname'])}}
+                                {{Form::label('', 'Precio del producto', ['for' => 'cname'])}}
                                 {{Form::number('product_price', $product->product_price, ['class' => 'form-control'])}}
                             </div>
                             <div class="form-group">
-                                {{Form::label('', 'Product Category', ['for' => 'cname'])}}
+                                {{Form::label('', 'Categoría del producto', ['for' => 'cname'])}}
                                 {{Form::select('product_category', $categories , $product->product_category,['class' => 'form-control'])}}
                             </div>
                             <div class="form-group">
-                                {{Form::label('', 'Product Image', ['for' => 'cname'])}}
+                                {{Form::label('', 'Imagen', ['for' => 'cname'])}}
                                 {{Form::file('product_image', ['class' => 'form-control'])}}
                             </div>
                        
-                            {{Form::submit('Update', ['class' => 'btn btn-primary'])}}
+                            {{Form::submit('Actualizar', ['class' => 'btn btn-primary'])}}
                     {!!Form::close()!!}
                 </div>
             </div>

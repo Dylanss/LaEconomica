@@ -20,12 +20,12 @@
                   <table id="order-listing" class="table">
                       <thead>
                         <tr>
-                            <th>Order #</th>
+                            <th>Orden #</th>
                             <th>Imagen</th>
                             <th>Descripción #1</th>
                             <th>Descripción #2</th>
-                            <th>Status</th>
-                            <th>Actions</th>
+                            <th>Estado</th>
+                            <th>Opciones</th>
                         </tr>
                       </thead>
                       <tbody>

@@ -11,7 +11,7 @@
                         {{csrf_field()}}
                             <div class="form-group">
                                 {{Form::hidden('id', $category->id)}}
-                                {{Form::label('', 'Product Category', ['for' => 'cname'])}}
+                                {{Form::label('', 'Categoría del producto', ['for' => 'cname'])}}
                                 {{Form::text('category_name', $category->category_name, ['class' => 'form-control', 'minlength' => '2'])}}
                             </div>
                             {{Form::submit('Update', ['class' => 'btn btn-primary'])}}

@@ -1,7 +1,7 @@
 @extends('layouts.app1')
 
 @section('title')
-    Cart
+    Carrito
 @endsection
 
 @section('content')
@@ -15,7 +15,7 @@
         <div class="row no-gutters slider-text align-items-end justify-content-center">
           <div class="col-md-9 ftco-animate mb-5 text-center">
           	<p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Cart <i class="fa fa-chevron-right"></i></span></p>
-            <h2 class="mb-0 bread">My Cart</h2>
+            <h2 class="mb-0 bread">Mi Carrito</h2>
           </div>
         </div>
       </div>
@@ -107,7 +107,7 @@
     		<div class="row justify-content-end">
     			<div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
-    					<h3>Cart Totals</h3>
+    					<h3>Total</h3>
     					<p class="d-flex">
     						<span>Subtotal</span>
     						<span>S/{{Session::get('cart')->totalPrice}}</span>
@@ -117,7 +117,7 @@
     						<span>S/0.00</span>
     					</p>
     					<p class="d-flex">
-    						<span>Discount</span>
+    						<span>Descuento</span>
     						<span>S/0.00</span>
     					</p>
     					<hr>
