@@ -30,7 +30,7 @@
 			 {{ csrf_field() }}
 				<a href="{{URL::to('/')}}">  
 				<span class="login100-form-logo">
-					<i class="zmdi zmdi-landscape"></i>
+					<i class="zmdi zmdi-account"></i>
 				</span>
 				</a>
 				<span class="login100-form-title p-b-34 p-t-27">
